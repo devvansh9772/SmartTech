@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech - Elevate Your Life</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo" style="display: flex; align-items: center;">
+      <img src="logo.jpg.png" alt="SmartTech Logo" style="height: 50px; margin-right: 10px;" />
+      SmartTech
+    </div>
+    <nav class="center-nav">
+      <ul class="nav-links">
+        <li><a href="#contact" class="nav-item" data-lang="contact-en">Contact</a></li>
+        <li>
+          <details style="position: relative;">
+            <summary style="cursor: pointer;">🌐 Language</summary>
+            <ul style="position: absolute; top: 30px; left: 0; background: black; color: black; padding: 10px; margin: 0; border: 1px solid #ccc; border-radius: 5px; list-style: none; box-shadow: 0 2px 6px rgba(0,0,0,0.2); z-index: 100;">
+              <li><a href="#" onclick="changeLanguage('en')">English</a></li>
+              <li><a href="#" onclick="changeLanguage('hi')">हिन्दी</a></li>
+              <li><a href="#" onclick="changeLanguage('gu')">ગુજરાતી</a></li>
+              <li><a href="#" onclick="changeLanguage('pa')">ਪੰਜਾਬੀ</a></li>
+              <li><a href="#" onclick="changeLanguage('bn')">বাংলা</a></li>
+              <li><a href="#" onclick="changeLanguage('ta')">தமிழ்</a></li>
+              <li><a href="#" onclick="changeLanguage('kn')">ಕನ್ನಡ</a></li>
+              <li><a href="#" onclick="changeLanguage('te')">తెలుగు</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2 id="hero-heading">Innovate. Simplify. Dominate.</h2>
+      <p id="hero-subheading">Smart solutions for smarter businesses.</p>
+      <a href="#pricing" class="btn-primary" id="hero-btn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+
+  <section id="features" class="features">
+    <div class="container">
+      <h3 id="features-heading">Why Choose SmartTech?</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h4 id="ai-integration">AI Integration</h4>
+          <p id="ai-integration-desc">Leverage artificial intelligence to boost productivity and decision-making.</p>
+        </div>
+        <div class="feature-item">
+          <h4 id="support">24/7 Support</h4>
+          <p id="support-desc">We're always here to help you grow and succeed.</p>
+        </div>
+        <div class="feature-item">
+          <h4 id="custom-solutions">Custom Solutions</h4>
+          <p id="custom-solutions-desc">Tailored software that fits your business needs perfectly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h3 id="pricing-heading">Our Plans</h3>
+      <div class="pricing-cards">
+        <div class="card">
+          <h4 id="starter">Starter</h4>
+          <p id="starter-price">free</p>
+          <ul>
+            <li id="starter-features">Basic Features</li>
+            <li id="starter-support">Email Support</li>
+          </ul>
+          <a class="btn-secondary" id="starter-btn">Choose Plan</a>
+        </div>
+        <div class="card featured">
+          <h4 id="professional">Professional</h4>
+          <p id="professional-price">$59/mo</p>
+          <ul>
+            <li id="professional-features">All Starter Features</li>
+            <li id="professional-support">Priority Support</li>
+            <li id="professional-tools">Advanced AI Tools</li>
+          </ul>
+          <a href="paymethod.html" class="btn-primary" id="professional-btn">Choose Plan</a>
+        </div>
+        <div class="card">
+          <h4 id="enterprise">Enterprise</h4>
+          <p id="enterprise-price">Contact Us</p>
+          <ul>
+            <li id="enterprise-features">All Features</li>
+            <li id="enterprise-support">Dedicated Manager</li>
+            <li id="enterprise-integrations">Custom Integrations</li>
+          </ul>
+          <a href="javascript:void(0);" class="btn-secondary" id="enterprise-btn">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ✅ Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <h3>What Our Clients Say</h3>
+    <div class="testimonial-grid">
+      <div class="testimonial-item">
+        <p>"SmartTech completely transformed our workflow. Their AI tools are outstanding!"</p>
+        <div class="testimonial-author">- Priya Mehta</div>
+      </div>
+      <div class="testimonial-item">
+        <p>"Their customer support is the best we've experienced. Fast and helpful!"</p>
+        <div class="testimonial-author">- Arjun Sharma</div>
+      </div>
+      <div class="testimonial-item">
+        <p>"Highly recommended! SmartTech gave our business a much-needed boost."</p>
+        <div class="testimonial-author">- Rina Patel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; 2025 SmartTech. All rights reserved.  
+        <p><a href="contact.html" style="color: white; text-decoration: none;" class="contact-link">Contact</a> |  
+        <a href="feedback.html" style="color: white; text-decoration: none;" class="feedback-link">Feedback</a></p>
+      </p>
+    </div>
+  </footer>
+
+<div id="chatbot-container"></div>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="AUWQwOtA9m-JbVjDB4jIY";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+  <!-- Modal for Enterprise Plan -->
+
+<!-- Modal for Enterprise Plan -->
+<div id="enterprise-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Enterprise Plan Details</h4>
+    <p><strong>Price:</strong> Contact us for pricing</p>
+    <p><strong>All Features:</strong> Access to all features</p>
+    <p><strong>Dedicated Manager:</strong> Personalized business assistance</p>
+    <p><strong>Custom Integrations:</strong> Tailored integrations for your business needs</p>
+    <p>
+      For more information and to get started, contact our sales team:<br>
+      📧 <a href="mailto:smarttech9772@gmail.com"  style="text-decoration: none;">smarttech9772@gmail.com</a><br>
+      📱 <a href="https://wa.me/919772607760" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: blue;" >Chat on WhatsApp</a><br>
+      📞 <a href="tel:+919772607760" style="text-decoration: none;">Call Us</a>
+    </p>
+                                    <!-- ** Privacy **
+noopener means jab ham click kre uske baad jo side open hote hai vo hamre side ko control na kar kar paye..
+noreferrer means jab ham click kre to hamare side ka naam dusre side ko nha pta chale  -->
+    </div>
+</div>
+
+
+  <script>
+   const languageData = {
+    en: {
+      heroHeading: "Innovate. Simplify. Dominate.",
+      heroSubheading: "Smart solutions for smarter businesses.",
+      heroBtn: "Get Started",
+      featuresHeading: "Why Choose SmartTech?",
+      aiIntegration: "AI Integration",
+      aiIntegrationDesc: "Leverage artificial intelligence to boost productivity and decision-making.",
+      support: "24/7 Support",
+      supportDesc: "We're always here to help you grow and succeed.",
+      customSolutions: "Custom Solutions",
+      customSolutionsDesc: "Tailored software that fits your business needs perfectly.",
+      pricingHeading: "Our Plans",
+      starter: "Starter",
+      starterPrice: "$29/mo",
+      starterFeatures: "Basic Features",
+      starterSupport: "Email Support",
+      starterBtn: "Choose Plan",
+      professional: "Professional",
+      professionalPrice: "$59/mo",
+      professionalFeatures: "All Starter Features",
+      professionalSupport: "Priority Support",
+      professionalTools: "Advanced AI Tools",
+      professionalBtn: "Choose Plan",
+      enterprise: "Enterprise",
+      enterprisePrice: "Contact Us",
+      enterpriseFeatures: "All Features",
+      enterpriseSupport: "Dedicated Manager",
+      enterpriseIntegrations: "Custom Integrations",
+      enterpriseBtn: "Contact Sales",
+      contactLink: "Contact",
+      feedbackLink: "Feedback"
+    },
+    hi: {
+      heroHeading: "नवोन्मेष करें। सरल बनाएं। प्रभुत्व स्थापित करें।",
+      heroSubheading: "स्मार्ट व्यवसायों के लिए स्मार्ट समाधान।",
+      heroBtn: "शुरू करें",
+      featuresHeading: "SmartTech क्यों चुनें?",
+      aiIntegration: "एआई एकीकरण",
+      aiIntegrationDesc: "उत्पादकता और निर्णय-निर्माण को बढ़ाने के लिए कृत्रिम बुद्धिमत्ता का लाभ उठाएं।",
+      support: "24/7 समर्थन",
+      supportDesc: "हम हमेशा आपकी मदद के लिए यहाँ हैं।",
+      customSolutions: "कस्टम समाधान",
+      customSolutionsDesc: "आपके व्यवसाय की जरूरतों के अनुरूप सॉफ़्टवेयर।",
+      pricingHeading: "हमारी योजनाएँ",
+      starter: "स्टार्टर",
+      starterPrice: "$29/माह",
+      starterFeatures: "मूल फीचर",
+      starterSupport: "ईमेल समर्थन",
+      starterBtn: "योजना चुनें",
+      professional: "पेशेवर",
+      professionalPrice: "$59/माह",
+      professionalFeatures: "सभी स्टार्टर फीचर",
+      professionalSupport: "प्राथमिकता समर्थन",
+      professionalTools: "उन्नत एआई उपकरण",
+      professionalBtn: "योजना चुनें",
+      enterprise: "एंटरप्राइज़",
+      enterprisePrice: "संपर्क करें",
+      enterpriseFeatures: "सभी फीचर",
+      enterpriseSupport: "समर्पित प्रबंधक",
+      enterpriseIntegrations: "कस्टम इंटीग्रेशन",
+      enterpriseBtn: "संपर्क करें",
+      contactLink: "संपर्क करें",
+      feedbackLink: "प्रतिक्रिया"
+    },
+    gu: {
+      heroHeading: "અવલંબણ. સરળ બનાવો. વિજય પ્રાપ્ત કરો.",
+      heroSubheading: "સ्मાર્ટ બિઝનેસ માટે સ્માર્ટ સોલ્યુશન્સ.",
+      heroBtn: "શરૂઆત કરો",
+      featuresHeading: "SmartTech પસંદ કેમ કરવું?",
+      aiIntegration: "AI એકીકરણ",
+      aiIntegrationDesc: "ઉત્પાદકતા અને નિર્ણાયક પ્રક્રિયાને મજબૂત કરવા માટે કૃતિમ બુદ્ધિનો લાભ લો.",
+      support: "24/7 સપોર્ટ",
+      supportDesc: "અમે હંમેશા તમારી મદદ માટે અહીં છીએ.",
+      customSolutions: "કસ્ટમ સોલ્યુશન્સ",
+      customSolutionsDesc: "તમારા વ્યવસાયની જરૂરિયાતોને શ્રેષ્ઠ રીતે ફિટ થતી સોફ્ટવેર.",
+      pricingHeading: "આપણી યોજનાઓ",
+      starter: "સ્ટાર્ટર",
+      starterPrice: "$29/મહિનો",
+      starterFeatures: "મૂળ ફીચર્સ",
+      starterSupport: "ઇમેઇલ સપોર્ટ",
+      starterBtn: "યોજનાનું પસંદ કરો",
+      professional: "વ્યાવસાયિક",
+      professionalPrice: "$59/મહિનો",
+      professionalFeatures: "અહીં દરેક સ્ટાર્ટર ફીચર્સ",
+      professionalSupport: "પ્રાથમિક સપોર્ટ",
+      professionalTools: "ઊન્નત AI સાધનો",
+      professionalBtn: "યોજનાનું પસંદ કરો",
+      enterprise: "એન્ટરપ્રાઇઝ",
+      enterprisePrice: "અમારો સંપર્ક કરો",
+      enterpriseFeatures: "બધા ફીચર્સ",
+      enterpriseSupport: "સમર્પિત મેનેજર",
+      enterpriseIntegrations: "કસ્ટમ ઇન્ટિગ્રેશન",
+      enterpriseBtn: "સંપર્ક વેચાણ",
+      contactLink: "સંપર્ક કરો",
+      feedbackLink: "પ્રતિસાદ"
+    },
+    pa: {
+      heroHeading: "ਨਵੀਨਤਾ. ਸਧਾਰਨ ਬਣਾਓ. ਪ੍ਰਾਭੂਤਵ ਹਾਸਲ ਕਰੋ.",
+      heroSubheading: "ਸਮਾਰਟ ਬਿਜ਼ਨਸ ਲਈ ਸਮਾਰਟ ਹੱਲ.",
+      heroBtn: "ਸ਼ੁਰੂ ਕਰੋ",
+      featuresHeading: "SmartTech ਕਿਉਂ ਚੁਣੋ?",
+      aiIntegration: "AI ਇੰਟੀਗ੍ਰੇਸ਼ਨ",
+      aiIntegrationDesc: "ਉਤਪਾਦਕਤਾ ਅਤੇ ਫੈਸਲਾ ਕਰਨ ਲਈ ਕ੍ਰਿਤ੍ਰਿਮ ਬੁੱਧੀ ਦਾ ਲਾਭ ਲਓ।",
+      support: "24/7 ਸਹਾਇਤਾ",
+      supportDesc: "ਅਸੀਂ ਹਮੇਸ਼ਾ ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਇੱਥੇ ਹਾਂ।",
+      customSolutions: "ਕਸਟਮ ਹੱਲ",
+      customSolutionsDesc: "ਤੁਹਾਡੇ ਕਾਰੋਬਾਰ ਦੀਆਂ ਜ਼ਰੂਰਤਾਂ ਲਈ ਪਰਫੈਕਟ ਸਾਫਟਵੇਅਰ।",
+      pricingHeading: "ਸਾਡੇ ਯੋਜਨਾਵਾਂ",
+      starter: "ਸਟਾਰਟਰ",
+      starterPrice: "$29/ਮਹੀਨਾ",
+      starterFeatures: "ਮੂਲ ਫੀਚਰ",
+      starterSupport: "ਈਮੇਲ ਸਹਾਇਤਾ",
+      starterBtn: "ਯੋਜਨਾ ਚੁਣੋ",
+      professional: "ਪੇਸ਼ੇਵਰ",
+      professionalPrice: "$59/ਮਹੀਨਾ",
+      professionalFeatures: "ਸਾਰੇ ਸਟਾਰਟਰ ਫੀਚਰ",
+      professionalSupport: "ਪ੍ਰਾਥਮਿਕਤਾ ਸਹਾਇਤਾ",
+      professionalTools: "ਉੱਚ AI ਟੂਲ",
+      professionalBtn: "ਯੋਜਨਾ ਚੁਣੋ",
+      enterprise: "ਐਂਟਰਪ੍ਰਾਈਜ਼",
+      enterprisePrice: "ਸੰਪਰਕ ਕਰੋ",
+      enterpriseFeatures: "ਸਾਰੇ ਫੀਚਰ",
+      enterpriseSupport: "ਨਿਯੁਕਤ ਮੈਨੇਜਰ",
+      enterpriseIntegrations: "ਕਸਟਮ ਇੰਟੀਗ੍ਰੇਸ਼ਨ",
+      enterpriseBtn: "ਸੰਪਰਕ ਵਿਕਰੀ",
+      contactLink: "ਸੰਪਰਕ ਕਰੋ",
+      feedbackLink: "ਪ੍ਰਤਿਕ੍ਰਿਆ"
+    },
+    bn: {
+      heroHeading: "উন্নয়ন করুন। সহজ করুন। আধিপত্য বিস্তার করুন।",
+      heroSubheading: "স্মার্ট ব্যবসায়িক জন্য স্মার্ট সমাধান।",
+      heroBtn: "শুরু করুন",
+      featuresHeading: "SmartTech কেন নির্বাচন করবেন?",
+      aiIntegration: "AI ইন্টিগ্রেশন",
+      aiIntegrationDesc: "উৎপাদনশীলতা এবং সিদ্ধান্ত গ্রহণে কৃত্রিম বুদ্ধিমত্তার সুবিধা নিন।",
+      support: "২৪/৭ সহায়তা",
+      supportDesc: "আমরা সবসময় আপনার সাহায্যে এখানে আছি।",
+      customSolutions: "কাস্টম সমাধান",
+      customSolutionsDesc: "আপনার ব্যবসার প্রয়োজনীয়তা অনুযায়ী কাস্টম সফটওয়্যার।",
+      pricingHeading: "আমাদের পরিকল্পনা",
+      starter: "স্টার্টার",
+      starterPrice: "$29/মাস",
+      starterFeatures: "মৌলিক বৈশিষ্ট্য",
+      starterSupport: "ইমেইল সহায়তা",
+      starterBtn: "পরিকল্পনা নির্বাচন করুন",
+      professional: "পেশাদার",
+      professionalPrice: "$59/মাস",
+      professionalFeatures: "স্টার্টারের সব বৈশিষ্ট্য",
+      professionalSupport: "অগ্রাধিকার সহায়তা",
+      professionalTools: "উন্নত AI সরঞ্জাম",
+      professionalBtn: "পরিকল্পনা নির্বাচন করুন",
+      enterprise: "এন্টারপ্রাইজ",
+      enterprisePrice: "যোগাযোগ করুন",
+      enterpriseFeatures: "সব বৈশিষ্ট্য",
+      enterpriseSupport: "নির্ধারিত ম্যানেজার",
+      enterpriseIntegrations: "কাস্টম ইন্টিগ্রেশন",
+      enterpriseBtn: "বিক্রয় যোগাযোগ করুন",
+      contactLink: "যোগাযোগ করুন",
+      feedbackLink: "মতামত"
+    },
+    ta: {
+      heroHeading: "புதுமை கொண்டு வாருங்கள். எளிதாக்குங்கள். ஆதிக்கம் செலுத்துங்கள்.",
+      heroSubheading: "சிறந்த வணிகங்களுக்கான சிறந்த தீர்வுகள்.",
+      heroBtn: "துவக்கம்",
+      featuresHeading: "SmartTech ஐ ஏன் தேர்ந்தெடுக்க வேண்டும்?",
+      aiIntegration: "AI ஒருங்கிணைப்பு",
+      aiIntegrationDesc: "உற்பத்தி மற்றும் முடிவெடுக்க உதவிக்குறிய ஆர்டிஃபிஷியல் இன்டெலிஜென்ஸின் பயன்பாடு.",
+      support: "24/7 ஆதரவு",
+      supportDesc: "நாங்கள் எப்போதும் உங்கள் உதவிக்கு இங்கே இருக்கின்றோம்.",
+      customSolutions: "தனிப்பயன் தீர்வுகள்",
+      customSolutionsDesc: "உங்கள் வணிக தேவைகளுக்கு பொருத்தமான மென்பொருள்.",
+      pricingHeading: "எங்கள் திட்டங்கள்",
+      starter: "ஸ்டார்டர்",
+      starterPrice: "$29/மாதம்",
+      starterFeatures: "அடிப்படை அம்சங்கள்",
+      starterSupport: "மின்னஞ்சல் ஆதரவு",
+      starterBtn: "திட்டத்தை தேர்வு செய்",
+      professional: "தொழில்முனைவோ",
+      professionalPrice: "$59/மாதம்",
+      professionalFeatures: "அனைத்து ஸ்டார்டர் அம்சங்களும்",
+      professionalSupport: "முன்னுரிமை ஆதரவு",
+      professionalTools: "அத்தியவசிய AI கருவிகள்",
+      professionalBtn: "திட்டத்தை தேர்வு செய்",
+      enterprise: "என்டர்பிரைஸ்",
+      enterprisePrice: "தொடர்பு கொள்ளுங்கள்",
+      enterpriseFeatures: "அனைத்து அம்சங்கள்",
+      enterpriseSupport: "விருப்ப மேலாளர்",
+      enterpriseIntegrations: "தனிப்பயன் இணைப்புகள்",
+      enterpriseBtn: "விற்பனை தொடர்பு கொள்ளுங்கள்",
+      contactLink: "தொடர்பு கொள்ளுங்கள்",
+      feedbackLink: "பிரதிபல"
+    },
+    kn: {
+      heroHeading: "ನವೀನತೆ. ಸರಳಗೊಳಿಸಿ. ವೃತ್ತಿ ಸಾಧಿಸಿ.",
+      heroSubheading: "ಸ್ಮಾರ್ಟ್ ವ್ಯವಹಾರಗಳಿಗೆ ಸ್ಮಾರ್ಟ್ ಪರಿಹಾರಗಳು.",
+      heroBtn: "ಪ್ರಾರಂಭಿಸಿ",
+      featuresHeading: "SmartTech ಅನ್ನು ಯಾಕೆ ಆಯ್ಕೆಮಾಡುವುದು?",
+      aiIntegration: "AI ಇಂಟಿಗ್ರೇಶನ್",
+      aiIntegrationDesc: "ಉತ್ಪಾದಕತೆ ಮತ್ತು ತೀರ್ಮಾನಗಳಿಗಾಗಿ ಕೃತಕ ಬುದ್ಧಿಮತ್ತೆಯ ಲಾಭವನ್ನು ಪಡೆದಿರಿ.",
+      support: "24/7 ಬೆಂಬಲ",
+      supportDesc: "ನಾವು ಯಾವಾಗಲೂ ನಿಮ್ಮ ನೆರವಿಗಾಗಿ ಇಲ್ಲಿ ಇದ್ದೇವೆ.",
+      customSolutions: "ಕಸ್ಟಮ್ ಪರಿಹಾರಗಳು",
+      customSolutionsDesc: "ನಿಮ್ಮ ವ್ಯವಹಾರದ ಅವಶ್ಯಕತೆಗಳಿಗೆ ಅನುಗುಣವಾದ ಸಾಫ್ಟ್‌ವೇರ್.",
+      pricingHeading: "ನಮ್ಮ ಯೋಜನೆಗಳು",
+      starter: "ಸ್ಟಾರ್ಟರ್",
+      starterPrice: "$29/ತಿಂಗಳು",
+      starterFeatures: "ಮೂಲ ವೈಶಿಷ್ಟ್ಯಗಳು",
+      starterSupport: "ಇಮೇಲ್ ಬೆಂಬಲ",
+      starterBtn: "ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      professional: "ವೃತ್ತಿಪರ",
+      professionalPrice: "$59/ತಿಂಗಳು",
+      professionalFeatures: "ಎಲ್ಲಾ ಸ್ಟಾರ್ಟರ್ ವೈಶಿಷ್ಟ್ಯಗಳು",
+      professionalSupport: "ಆಗಾಧ ಬೆಂಬಲ",
+      professionalTools: "ಆಧುನಿಕ AI ಉಪಕರಣಗಳು",
+      professionalBtn: "ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+      enterprise: "ಎಂಟರ್ಪ್ರೈಸ್",
+      enterprisePrice: "ಸಂಪರ್ಕಿಸಿ",
+      enterpriseFeatures: "ಎಲ್ಲಾ ವೈಶಿಷ್ಟ್ಯಗಳು",
+      enterpriseSupport: "ನಿರ್ದೇಶಿತ ವ್ಯವಸ್ಥಾಪಕ",
+      enterpriseIntegrations: "ಕಸ್ಟಮ್ ಇಂಟಿಗ್ರೇಶನ್",
+      enterpriseBtn: "ವಿಕ್ರಯ ಸಂಪರ್ಕಿಸಿ",
+      contactLink: "ಸಂಪರ್ಕಿಸಿ",
+      feedbackLink: "ಪ್ರತಿಕ್ರಿಯೆ"
+    },
+    te: {
+      heroHeading: "ఆవిష్కరణ. సులభం చేసుకోండి. ఆధిపత్యం సాధించండి.",
+      heroSubheading: "స్మార్ట్ బిజినెస్‌ల కోసం స్మార్ట్ సొల్యూషన్స్.",
+      heroBtn: "ప్రారంభించు",
+      featuresHeading: "SmartTechను ఎందుకు ఎంచుకోవాలి?",
+      aiIntegration: "AI ఇంటిగ్రేషన్",
+      aiIntegrationDesc: "ఉత్పత్తి సామర్థ్యం మరియు నిర్ణయాలు కోసం ఆర్టిఫిషియల్ ఇంటెలిజెన్స్ ఉపయోగించండి.",
+      support: "24/7 మద్దతు",
+      supportDesc: "మేము ఎల్లప్పుడూ మీ సహాయానికి ఇక్కడ ఉన్నాము.",
+      customSolutions: "కస్టమ్ సొల్యూషన్స్",
+      customSolutionsDesc: "మీ వ్యాపార అవసరాలకు సరిపోయే సాఫ్ట్‌వేర్.",
+      pricingHeading: "మా ప్రణాళికలు",
+      starter: "స్టార్టర్",
+      starterPrice: "$29/నెల",
+      starterFeatures: "మూల లక్షణాలు",
+      starterSupport: "ఇమెయిల్ మద్దతు",
+      starterBtn: "ప్రణాళికను ఎంచుకోండి",
+      professional: "ప్రొఫెషనల్",
+      professionalPrice: "$59/నెల",
+      professionalFeatures: "అన్ని స్టార్టర్ లక్షణాలు",
+      professionalSupport: "ప్రాధాన్య మద్దతు",
+      professionalTools: "అధునాతన AI టూల్స్",
+      professionalBtn: "ప్రణాళికను ఎంచుకోండి",
+      enterprise: "ఎంటర్ప్రైజ్",
+      enterprisePrice: "సంప్రదించండి",
+      enterpriseFeatures: "అన్ని లక్షణాలు",
+      enterpriseSupport: "నిర్దిష్ట మేనేజర్",
+      enterpriseIntegrations: "కస్టమ్ ఇంటిగ్రేషన్స్",
+      enterpriseBtn: "విక్రయంతో సంప్రదించండి",
+      contactLink: "సంప్రదించండి",
+      feedbackLink: "ఫీడ్‌బ్యాక్"
+    }
+  };
+
+  function changeLanguage(lang) {
+    const data = languageData[lang];
+    
+    document.querySelector("#hero-heading").innerText = data.heroHeading;
+    document.querySelector("#hero-subheading").innerText = data.heroSubheading;
+    document.querySelector("#hero-btn").innerText = data.heroBtn;
+    document.querySelector("#features-heading").innerText = data.featuresHeading;
+    document.querySelector("#ai-integration").innerText = data.aiIntegration;
+    document.querySelector("#ai-integration-desc").innerText = data.aiIntegrationDesc;
+    document.querySelector("#support").innerText = data.support;
+    document.querySelector("#support-desc").innerText = data.supportDesc;
+    document.querySelector("#custom-solutions").innerText = data.customSolutions;
+    document.querySelector("#custom-solutions-desc").innerText = data.customSolutionsDesc;
+    document.querySelector("#pricing-heading").innerText = data.pricingHeading;
+    document.querySelector("#starter").innerText = data.starter;
+    document.querySelector("#starter-price").innerText = data.starterPrice;
+    document.querySelector("#starter-features").innerText = data.starterFeatures;
+    document.querySelector("#starter-support").innerText = data.starterSupport;
+    document.querySelector("#starter-btn").innerText = data.starterBtn;
+    document.querySelector("#professional").innerText = data.professional;
+    document.querySelector("#professional-price").innerText = data.professionalPrice;
+    document.querySelector("#professional-features").innerText = data.professionalFeatures;
+    document.querySelector("#professional-support").innerText = data.professionalSupport;
+    document.querySelector("#professional-tools").innerText = data.professionalTools;
+    document.querySelector("#professional-btn").innerText = data.professionalBtn;
+    document.querySelector("#enterprise").innerText = data.enterprise;
+    document.querySelector("#enterprise-price").innerText = data.enterprisePrice;
+    document.querySelector("#enterprise-features").innerText = data.enterpriseFeatures;
+    document.querySelector("#enterprise-support").innerText = data.enterpriseSupport;
+    document.querySelector("#enterprise-integrations").innerText = data.enterpriseIntegrations;
+    document.querySelector("#enterprise-btn").innerText = data.enterpriseBtn;
+    document.querySelector(".contact-link").innerText = data.contactLink;
+    document.querySelector(".feedback-link").innerText = data.feedbackLink;
+  }
+
+  // Set default language to English on page load
+  changeLanguage('en');
+
+  // Modal Script
+  window.onload = () => {
+    changeLanguage('en'); // Default language
+
+    const modal = document.getElementById("enterprise-modal");
+    const btn = document.getElementById("enterprise-btn");
+    const span = document.getElementsByClassName("close")[0];
+
+    if (btn && modal && span) {
+      btn.onclick = () => {
+        modal.style.display = "block";
+      }
+
+      span.onclick = () => {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    }
+  }
+</script>
+
+</body>
+</html>   
+  
+
+
+
+
+
+
+

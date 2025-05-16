@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eeeee4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .star {
+      font-size: 30px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.hovered,
+    .star.selected {
+      color: #f5b301;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      font-size: 20px;
+      color: green;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.jpg.png" alt="SmartTech Logo" />
+      SmartTech
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Feedback</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <label>Your Rating</label>
+      <div class="rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <input type="hidden" name="rating" id="ratingValue" required>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="thankYouMessage">🎉 Thank you for your feedback! We truly appreciate your time. 💬 Redirecting to Home...</div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll(".star");
+    const ratingInput = document.getElementById("ratingValue");
+
+    stars.forEach((star, index) => {
+      star.addEventListener("mouseover", () => {
+        stars.forEach((s, i) => {
+          s.classList.toggle("hovered", i <= index);
+        });
+      });
+
+      star.addEventListener("mouseout", () => {
+        stars.forEach((s) => s.classList.remove("hovered"));
+      });
+
+      star.addEventListener("click", () => {
+        ratingInput.value = star.getAttribute("data-value");
+        stars.forEach((s, i) => {
+          s.classList.toggle("selected", i <= index);
+        });
+      });
+    });
+
+    const form = document.getElementById("feedbackForm");
+    const thankYou = document.getElementById("thankYouMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      form.style.display = "none";
+      thankYou.style.display = "block";
+
+      // Redirect to home page after 3 seconds
+      setTimeout(() => {
+        window.location.href = "index.html"; // Replace with your homepage filename
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

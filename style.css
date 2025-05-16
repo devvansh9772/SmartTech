@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+    font-family: 'Noto Sans', Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 2rem;
+  }
+  
+  .center-nav {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #f39c12;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to right, #2c3e50, #007bff);
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn-primary {
+    background: #f39c12;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Features Section */
+  .features {
+    background: #f8f9fa;
+    padding: 3rem 0;
+  }
+  
+  .features .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .feature-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .feature-item {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Pricing Section */
+  .pricing {
+    padding: 3rem 0;
+    background: #fff;
+  }
+  
+  .pricing .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .pricing-cards {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .card.featured {
+    border: 2px solid #f39c12;
+  }
+  
+  .card ul {
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .btn-secondary {
+    background: #3498db;
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+  }
+  
+
+
+  
+
+
+
+  /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+
+
+    /* Testimonials Section CSS */
+    .testimonials {
+      background-color: #f8f8f8;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .testimonials h3 {
+      font-size: 2em;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .testimonial-item {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-item p {
+      font-style: italic;
+      color: #555;
+    }
+
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #222;
+    }  

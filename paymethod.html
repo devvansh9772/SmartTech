@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Payment Method</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    .payment-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 50px;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+
+    .payment-method {
+      text-align: center;
+      transition: transform 0.3s;
+      width: 140px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .payment-method:hover {
+      transform: scale(1.1);
+    }
+
+    .payment-method img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .payment-method p {
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+      color: #333;
+    }
+
+    .payment-link {
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Report Issue Popup Style */
+    #issueForm {
+      display: none;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    textarea {
+      width: 90%;
+      padding: 10px;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .report-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover,
+    .report-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Select Your Payment Method</h2>
+  </header>
+
+  <div class="payment-container">
+    <!-- Google Pay -->
+    <a class="payment-link" href="https://gpay.example.com" target="_blank">
+      <div class="payment-method">
+        <img src="GOOGLEPAY.jpg" alt="Google Pay Logo"/>
+        <p>Google Pay</p>
+      </div>
+    </a>
+
+    <!-- PhonePe -->
+    <a class="payment-link" href="https://phonepe.example.com" target="_blank">
+      <div class="payment-method">
+        <img src="PHONEPAY.jpg" alt="PhonePe Logo"/>
+        <p>PhonePe</p>
+      </div>
+    </a>
+
+    <!-- Paytm -->
+    <a class="payment-link" href="https://paytm.example.com" target="_blank">
+      <div class="payment-method">
+        <img src="PAYTM.png" alt="Paytm Logo"/>
+        <p>Paytm</p>
+      </div>
+    </a>
+
+    <!-- BHIM UPI -->
+    <a class="payment-link" href="https://bhimupi.example.com" target="_blank">
+      <div class="payment-method">
+        <img src="BHIMPAY.jpeg" alt="BHIM UPI Logo"/>
+        <p>BHIM UPI</p>
+      </div>
+    </a>
+
+    <!-- UPI -->
+    <a class="payment-link" href="https://upi.example.com" target="_blank">
+      <div class="payment-method">
+        <img src="UPI.webp" alt="UPI Logo"/>
+        <p>UPI</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Report Issue Button -->
+  <div style="text-align: center; margin-top: 40px;">
+    <button class="report-btn" onclick="document.getElementById('issueForm').style.display='block'">Report Payment Issue</button>
+  </div>
+
+  <!-- Report Issue Form -->
+  <div id="issueForm">
+    <h3>Describe your payment issue</h3>
+    <textarea id="issueText" rows="4" placeholder="Enter your issue here..."></textarea><br>
+    <button class="submit-btn" onclick="submitIssue()">Submit</button>
+  </div>
+
+  <footer id="contact">
+    <div class="container">
+      <p>&copy; 2025 SmartTech. All rights reserved.</p>
+      <p>
+        <a href="contact.html" style="color: white; text-decoration: none;" class="contact-link">Contact</a> |
+        <a href="feedback.html" style="color: white; text-decoration: none;" class="feedback-link">Feedback</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function submitIssue() {
+      const issue = document.getElementById('issueText').value.trim();
+      if (issue) {
+        const encodedMessage = encodeURIComponent("Payment Issue:\n" + issue);
+        const phoneNumber = "919772607760"; // Change to your actual WhatsApp number
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+      } else {
+        alert("Please describe your issue before submitting.");
+      }
+    }
+  </script>
+
+</body>
+</html>
